@@ -29,29 +29,6 @@ for (const file of commandFiles) {
 	}
 }
 
-/**
- * this function runs everyday at 00:00:00 separately from the whole algorithm to check if it's someone's birthday from the database
- * if it is, it sends a message to the birthday person
- */
-function bDayChecker(){
-    let today = new Date();
-    let day = today.getDate();
-    let month = today.getMonth() + 1;
-    let year = today.getFullYear();
-    let date = day + "/" + month + "/" + year;
-    db.all(`SELECT * FROM bdays` /*WHERE date = ?`, [date], */,(err, rows) => {
-        if (err) {
-            throw err;
-        }
-        rows.forEach((row) => {
-            client.users.fetch(row.user).then(user => {
-                user.send("Happy birthday!");
-            });
-        });
-    });
-}
-
-
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
@@ -69,8 +46,5 @@ client.on(Events.InteractionCreate, async interaction => {
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
-
-//runs the bDayChecker function every day at 00:00:00 separately from the whole algorithm
-setInterval(bDayChecker, 86400000);
 
 client.login(process.env.TOKEN);
