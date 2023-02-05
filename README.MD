@@ -1,17 +1,17 @@
-# Birthday Bot
-## a bot that wishes you happy birthday on your birthday
+# reboot bot
+## a bot that reboot amp instances
 
 ### How to use
 1. Clone the repository
 2. Install the requirements
 `npm install`
-3. Rename bdays.db.template to bdays.db
-4. run the bot
+3. run the bot
 `node main.js`
 
-### How to add your birthday
+### How to execute a reboot
 1. Go to bot chat
 2. Run the command
-`/setbirthday <day> <month> <year>`
-3. Done
+`/reboot`
+3. Check dm and follow instructions
+4. Done
 
