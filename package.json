@@ -1,0 +1,16 @@
+{
+  "name": "reboot-bot-2.0",
+  "version": "1.0.0",
+  "description": "### How to use 1. Clone the repository 2. Install the requirements `npm install` 3. Rename bdays.db.template to bdays.db 4. run the bot `node main.js`",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  }
+}
